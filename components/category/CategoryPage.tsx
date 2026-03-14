@@ -7,6 +7,7 @@ import { Category, Occasion } from "@/types";
 import { getProductsByCategory } from "@/lib/products";
 import { categoryConfig } from "@/lib/categoryConfig";
 import { ProductGrid } from "@/components/product/ProductGrid";
+import { CtaBanner } from "@/components/ui/CtaBanner";
 
 interface CategoryPageProps {
   category: Category;
@@ -86,8 +87,8 @@ export function CategoryPage({ category }: CategoryPageProps) {
   return (
     <div>
       {/* Hero banner */}
-      <div className={`bg-gradient-to-br ${gradient} py-12 px-4`}>
-        <div className="max-w-7xl mx-auto">
+      <div className={`bg-gradient-to-br ${gradient} py-12`}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2 text-sm text-slate-500 mb-6">
             <Link href="/" className="hover:text-slate-700">Home</Link>
             <ChevronRight className="w-3 h-3" />
@@ -150,6 +151,8 @@ export function CategoryPage({ category }: CategoryPageProps) {
 
         <ProductGrid products={filtered} />
       </div>
+
+      <CtaBanner />
     </div>
   );
 }

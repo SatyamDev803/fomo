@@ -10,7 +10,7 @@ export default function WhatsAppBubble() {
     "https://wa.me/918882159187?text=Hi!%20I%20need%20help%20with%20gifting%20%F0%9F%8E%81";
 
   return (
-    <div className="fixed bottom-6 right-6 md:bottom-6 md:right-6 bottom-20 right-4 z-50">
+    <div className="fixed bottom-20 right-4 md:bottom-6 md:right-6 z-50">
       <div className="relative flex items-center">
         {/* Tooltip */}
         <AnimatePresence>

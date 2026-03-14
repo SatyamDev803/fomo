@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Instagram, Mail, Phone } from "lucide-react";
+import { FomoLogo } from "@/components/ui/FomoLogo";
 
 const quickLinks = [
   { label: "Home", href: "/" },
@@ -19,9 +20,7 @@ export function Footer() {
           {/* Brand */}
           <div className="space-y-4">
             <div>
-              <p className="font-serif font-bold text-2xl text-purple-400 tracking-tight">
-                FOMO
-              </p>
+              <FomoLogo className="text-2xl" />
               <p className="text-[10px] text-slate-500 font-medium tracking-widest uppercase">
                 gifting
               </p>

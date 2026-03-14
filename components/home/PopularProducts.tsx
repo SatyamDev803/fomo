@@ -15,9 +15,9 @@ export function PopularProducts() {
         </div>
 
         {/* Mobile: horizontal scroll */}
-        <div className="md:hidden flex gap-4 overflow-x-auto scroll-snap-x pb-4 -mx-4 px-4">
+        <div className="md:hidden flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 -mx-4 px-4">
           {products.map((product, i) => (
-            <div key={product.id} className="scroll-snap-start shrink-0 w-52">
+            <div key={product.id} className="snap-start shrink-0 w-52">
               <ProductCard product={product} index={i} />
             </div>
           ))}

@@ -63,6 +63,8 @@ export default function CheckoutPage() {
           script.src = "https://checkout.razorpay.com/v1/checkout.js";
           document.body.appendChild(script);
 
+          script.onerror = () => setIsProcessing(false);
+
           script.onload = () => {
             const options = {
               key: razorpayKeyId,
@@ -90,6 +92,9 @@ export default function CheckoutPage() {
                 clearCart();
                 router.push(`/order-success/${orderId}`);
               },
+              modal: {
+                ondismiss: () => setIsProcessing(false),
+              },
               prefill: {
                 name: formData.fullName,
                 email: formData.email,
@@ -99,6 +104,7 @@ export default function CheckoutPage() {
             };
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             const rzp = new (window as any).Razorpay(options);
+            rzp.on("payment.failed", () => setIsProcessing(false));
             rzp.open();
             setIsProcessing(false);
           };

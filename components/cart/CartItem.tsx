@@ -7,6 +7,15 @@ import { useCartStore } from "@/store/cartStore";
 import { categoryConfig } from "@/lib/categoryConfig";
 import { formatPrice } from "@/lib/utils";
 
+const badgeClasses: Record<string, string> = {
+  her: "bg-pink-50 text-pink-600",
+  him: "bg-blue-50 text-blue-600",
+  family: "bg-sky-50 text-sky-600",
+  kids: "bg-yellow-50 text-yellow-600",
+  handmade: "bg-rose-50 text-rose-600",
+  general: "bg-purple-50 text-purple-600",
+};
+
 interface CartItemProps {
   item: CartItemType;
 }
@@ -14,6 +23,7 @@ interface CartItemProps {
 export function CartItemCard({ item }: CartItemProps) {
   const { updateQuantity, removeItem } = useCartStore();
   const config = categoryConfig[item.category] || categoryConfig.general;
+  const badge = badgeClasses[item.category] || badgeClasses.general;
 
   return (
     <div className="flex gap-3 py-4">
@@ -30,10 +40,7 @@ export function CartItemCard({ item }: CartItemProps) {
       <div className="flex-1 min-w-0">
         <div className="flex items-start justify-between gap-2">
           <div className="flex-1 min-w-0">
-            <span
-              className="inline-block text-[10px] font-semibold uppercase tracking-wider px-1.5 py-0.5 rounded-full mb-1"
-              style={{ background: `rgba(var(--${config.color}-100), 0.5)` }}
-            >
+            <span className={`inline-block text-[10px] font-semibold uppercase tracking-wider px-1.5 py-0.5 rounded-full mb-1 ${badge}`}>
               {config.label}
             </span>
             <p className="font-medium text-sm text-slate-800 line-clamp-2 leading-snug">

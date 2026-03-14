@@ -25,11 +25,16 @@ export const metadata: Metadata = {
   description:
     "Handpicked gifts for every person, every occasion, every budget. Shop beautiful gifts for her, him, family, kids and more.",
   keywords: ["gifts", "gifting", "birthday gifts", "anniversary gifts", "India", "FOMO Gifting"],
+  icons: {
+    icon: "/logo.jpeg",
+    apple: "/logo.jpeg",
+  },
   openGraph: {
     title: "FOMO Gifting | Gift the Moment",
     description: "Handpicked gifts for every person, every occasion, every budget.",
     type: "website",
     locale: "en_IN",
+    images: ["/logo.jpeg"],
   },
 };
 

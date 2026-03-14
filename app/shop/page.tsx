@@ -6,6 +6,7 @@ import { ProductGrid } from "@/components/product/ProductGrid";
 import { Product, Category, Occasion } from "@/types";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
+import { CtaBanner } from "@/components/ui/CtaBanner";
 
 const occasionOptions = [
   { value: "", label: "All Occasions" },
@@ -112,8 +113,11 @@ function ShopContent() {
 
 export default function ShopPage() {
   return (
-    <Suspense fallback={<div className="py-20 text-center text-slate-500">Loading...</div>}>
-      <ShopContent />
-    </Suspense>
+    <>
+      <Suspense fallback={<div className="py-20 text-center text-slate-500">Loading...</div>}>
+        <ShopContent />
+      </Suspense>
+      <CtaBanner />
+    </>
   );
 }

@@ -5,6 +5,7 @@ import { useState } from "react";
 import { ShoppingBag, Menu, X } from "lucide-react";
 import { useCartStore } from "@/store/cartStore";
 import { motion, AnimatePresence } from "framer-motion";
+import { FomoLogo } from "@/components/ui/FomoLogo";
 
 const navLinks = [
   { label: "Home", href: "/", color: "hover:text-purple-500" },
@@ -25,13 +26,8 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex flex-col leading-none">
-            <span className="font-serif font-bold text-2xl text-purple-400 tracking-tight">
-              FOMO
-            </span>
-            <span className="text-[10px] text-slate-500 font-medium tracking-widest uppercase -mt-0.5">
-              gifting
-            </span>
+          <Link href="/" className="flex items-center">
+            <FomoLogo className="text-2xl" />
           </Link>
 
           {/* Desktop Nav */}

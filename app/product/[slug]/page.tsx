@@ -14,6 +14,7 @@ import { categoryConfig } from "@/lib/categoryConfig";
 import { useCartStore } from "@/store/cartStore";
 import { formatPrice } from "@/lib/utils";
 import { ProductCard } from "@/components/product/ProductCard";
+import { CtaBanner } from "@/components/ui/CtaBanner";
 
 const colorBtnMap: Record<string, string> = {
   pink: "bg-pink-400 hover:bg-pink-500 shadow-pink-200",
@@ -95,6 +96,7 @@ export default function ProductDetailPage() {
   };
 
   return (
+    <>
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
       {/* Breadcrumb */}
       <div className="flex items-center gap-2 text-sm text-slate-500 mb-6">
@@ -288,5 +290,8 @@ export default function ProductDetailPage() {
         </div>
       )}
     </div>
+
+    <CtaBanner />
+    </>
   );
 }

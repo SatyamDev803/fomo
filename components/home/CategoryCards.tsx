@@ -78,7 +78,7 @@ export function CategoryCards() {
           <p className="text-slate-500">Find the perfect gift for everyone you love</p>
         </div>
 
-        <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
           {categories.map((cat, i) => (
             <motion.div
               key={cat.slug}
